@@ -20,7 +20,7 @@ public class Dirt : MonoBehaviour
             other.GetComponent<XRGrabInteractable>().enabled = false;
             other.transform.position = seedPlacement.transform.position;
             other.transform.rotation = seedPlacement.transform.rotation;
-            Destroy(seed.gameObject);
+            //Destroy(seed.gameObject);
             Debug.Log("Pousse?");
             IsPlace = true;
         }

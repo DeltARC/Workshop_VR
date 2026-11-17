@@ -1,0 +1,31 @@
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+
+public class SunSnap : MonoBehaviour
+{
+    public GameObject SunPlacement;
+
+    private bool sunOnFlower = false;
+    public bool IsPlace = false;
+
+    void FlowerOnSunlight(Collider other)
+    {
+
+        FlowerPot flowerpPot = other.GetComponent<FlowerPot>();
+
+        if (flowerpPot)
+        {
+            other.GetComponent<Rigidbody>().isKinematic = true;
+            other.GetComponent<XRGrabInteractable>().enabled = false;
+            other.transform.position = SunPlacement.transform.position;
+            other.transform.rotation = SunPlacement.transform.rotation;
+            Debug.Log("Sun");
+            IsPlace = true;
+            sunOnFlower = true;
+        }else
+        {
+            sunOnFlower = false;
+            Debug.Log("Bougabouga");
+        }
+    }
+}
