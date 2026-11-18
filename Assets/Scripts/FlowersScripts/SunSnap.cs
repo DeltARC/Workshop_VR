@@ -15,8 +15,8 @@ public class SunSnap : MonoBehaviour
 
         if (flowerpPot)
         {
+            // Empeche l'objet de bouger, et le place sur le position voulu.
             other.GetComponent<Rigidbody>().isKinematic = true;
-            other.GetComponent<XRGrabInteractable>().enabled = false;
             other.transform.position = SunPlacement.transform.position;
             other.transform.rotation = SunPlacement.transform.rotation;
             Debug.Log("Sun");
