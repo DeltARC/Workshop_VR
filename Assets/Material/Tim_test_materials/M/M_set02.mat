@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Base_color:
-        m_Texture: {fileID: 2800000, guid: cdebec39dbf81a14688e1de8d12897b4, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6294e7e4853ebc48be03c857ca65ea5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emissive:
@@ -37,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 13d6b7b732a11904e9d4b8904addbfed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness:
