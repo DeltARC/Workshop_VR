@@ -1,3 +1,4 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -5,6 +6,8 @@ public class OpenBook : MonoBehaviour
 {
     [SerializeField] public GameObject CoverTop;
     [SerializeField] public GameObject CoverBottom;
+    [SerializeField] public GameObject CoverBack;
+    [SerializeField] public GameObject[] Page;
     private bool isOpen= false;
 
 
@@ -16,7 +19,7 @@ public class OpenBook : MonoBehaviour
 
     void Update()
     {
-        
+
         if (GetComponent<Rigidbody>().useGravity == false && !isOpen)
         {
             Debug.Log(isOpen);
@@ -24,16 +27,22 @@ public class OpenBook : MonoBehaviour
             isOpen = true;
             Openbook();
         }
-        else 
-        {
-            //isOpen = false;
-        }
+        
     }
 
     void Openbook()
     {
-        CoverTop.transform.Rotate(0,90,0);
-        CoverBottom.transform.Rotate(0,-90,0);
+        CoverTop.SetActive(false);
+        CoverBottom.SetActive(false);
+        CoverBack.SetActive(true);
+
+        for(int i = 0; i < 3; i++)
+        {
+            Page[i].GetComponent<XRGrabInteractable>().enabled = true;
+            Page[i].GetComponent<Rigidbody>().freezeRotation = false;
+            
+            Debug.Log(i);
+        }
 
         Debug.Log("ouvert");
         return;
