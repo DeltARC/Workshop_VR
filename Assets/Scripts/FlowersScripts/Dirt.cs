@@ -6,11 +6,6 @@ public class Dirt : MonoBehaviour
     // Le script est attache a Dirt dans le prefab du pot
 
     public GameObject seedPlacement;
-    public GameObject SeedPrefab;
-    public Collider SeedCol;
-    public GameObject parentObject;
-
-    public bool IsPlace = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,22 +14,13 @@ public class Dirt : MonoBehaviour
         // SI Seed touche le collider ALORS il se place a l'emplacement de la graine et deviens l'enfant de seedPlacement.
         if (seed)
         {
+            // permet à la graine de ne plus pouvoir être prise et de suivre le pot en devenant un enfant de seePlacement.
             other.GetComponent<Rigidbody>().isKinematic = true;
             other.GetComponent<XRGrabInteractable>().enabled = false;
             other.transform.SetParent(seedPlacement.transform, true);
+            // permet a la graine de rentrer dans la terre
             other.transform.position = seedPlacement.transform.position;
             other.transform.rotation = seedPlacement.transform.rotation;
-
-            Debug.Log("Pousse?");
-            IsPlace = true;
-
-            if (IsPlace == false)
-            {
-                //Instantiate(SeedPrefab, seedPlacement.transform.position, Quaternion.identity, gameObject.transform);
-
-                Instantiate(SeedPrefab, seedPlacement.transform.position, SeedPrefab.transform.rotation);
-                other.transform.SetParent(seedPlacement.transform);
-            }
         }
     }
 }
