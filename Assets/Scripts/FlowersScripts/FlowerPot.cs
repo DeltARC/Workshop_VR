@@ -7,7 +7,7 @@ public class FlowerPot : MonoBehaviour
     private bool isSun = false;
     private bool isWater = false;
     private bool isPottingSoils = false;
-    private bool isSeed = false;
+    public bool isSeed = false;
 
     void OnEnable()
     {

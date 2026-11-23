@@ -571,7 +571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaitingTime
   seedActive: 0
+  activeTimer: 0
   waitingTime: 0
+  FlowerPot: {fileID: 1151875296}
 --- !u!114 &1151875309
 MonoBehaviour:
   m_ObjectHideFlags: 0

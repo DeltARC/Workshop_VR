@@ -10,6 +10,9 @@ public class WaitingTime : MonoBehaviour
     public delegate void WaitingTimeStart();
     public static event WaitingTimeStart WaitingTimerStart;
 
+    public GameObject FlowerPot;
+    bool isSeeds;
+
     private void Start()
     {
         activeTimer = true;
@@ -17,17 +20,21 @@ public class WaitingTime : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (seedActive == false)
+        if (FlowerPot.GetComponent<FlowerPot>().isSeed)
         {
-            if (activeTimer)
+            Debug.Log("true seed");
+            if (seedActive)
             {
-                waitingTime += Time.deltaTime;
-
-                if (waitingTime > 5f)
+                if (activeTimer)
                 {
-                    Debug.Log("5 seconde");
-                    WaitingTimerStart?.Invoke();
-                    activeTimer = false;
+                    waitingTime += Time.deltaTime;
+
+                    if (waitingTime > 5f)
+                    {
+                        Debug.Log("5 seconde");
+                        WaitingTimerStart?.Invoke();
+                        activeTimer = false;
+                    }
                 }
             }
         }
