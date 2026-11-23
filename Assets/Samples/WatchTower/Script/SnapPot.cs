@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -12,6 +13,11 @@ public class SnapPot : MonoBehaviour
 
     private bool isInsideZone = false;
     [SerializeField] private bool isItSunnyHere = false;
+
+    [Header("Placing Sounds")]
+    [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private List<AudioClip> grabSounds = new List<AudioClip>();
     private void OnTriggerEnter(Collider other)
     {
         FlowerPot flowerPot = other.GetComponentInParent<FlowerPot>();
@@ -57,5 +63,17 @@ public class SnapPot : MonoBehaviour
         );
 
         Debug.Log("Pot aligned !");
+
+        PlayRandomPlacingSound();
+    }
+
+    private void PlayRandomPlacingSound()
+    {
+        if (audioSource == null || grabSounds.Count == 0)
+            return;
+
+        AudioClip randomSound = grabSounds[Random.Range(0, grabSounds.Count)];
+
+        audioSource.PlayOneShot(randomSound);
     }
 }
