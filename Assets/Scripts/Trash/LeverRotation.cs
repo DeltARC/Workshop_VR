@@ -18,6 +18,9 @@ public class LeverRotation : MonoBehaviour
     [SerializeField] private float rotationDuration = 2f;
     [SerializeField] private float returnDuration = 2f;
 
+    [Header("Grab Sounds")]
+    [SerializeField] private AudioSource audioSource;
+
     private Quaternion initialObjectRotation;
     private Quaternion initialLeverRotation;
     private Quaternion targetLeverRotation;
@@ -35,7 +38,7 @@ public class LeverRotation : MonoBehaviour
         initialObjectRotation = objectToRotate.localRotation;
         initialLeverRotation = Quaternion.Euler(leverInitialAngle, 0, 0);
         targetLeverRotation = Quaternion.Euler(leverActiveAngle, 0, 0);
-
+        audioSource = GetComponent<AudioSource>();
         lever.handle.localRotation = initialLeverRotation;
     }
 
@@ -78,17 +81,21 @@ public class LeverRotation : MonoBehaviour
         }
 
         // Animation de l'objet uniquement
+        PlayActivationSound();
+
         yield return AnimateObject(
             initialObjectRotation,
             targetObjectRotation,
             rotationDuration
         );
 
-        // Garder l'objet et le levier en position tant que le joueur tient
+        // Attendre que le joueur relâche
         while (lever.isSelected)
             yield return null;
 
-        // Retour animé du levier et de l'objet
+        // Animation retour
+        PlayActivationSound();
+
         yield return AnimateBoth(
             targetObjectRotation,
             initialObjectRotation,
@@ -166,5 +173,10 @@ public class LeverRotation : MonoBehaviour
 
         objectToRotate.localRotation = objectEnd;
         lever.handle.localRotation = leverEnd;
+    }
+
+    private void PlayActivationSound()
+    {
+        audioSource.Play();
     }
 }
