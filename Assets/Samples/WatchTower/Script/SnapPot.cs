@@ -11,7 +11,7 @@ public class SnapPot : MonoBehaviour
     private XRGrabInteractable currentGrab;
 
     private bool isInsideZone = false;
-
+    [SerializeField] private bool isItSunnyHere = false;
     private void OnTriggerEnter(Collider other)
     {
         FlowerPot flowerPot = other.GetComponentInParent<FlowerPot>();
