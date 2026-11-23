@@ -27,12 +27,32 @@ namespace UnityEngine.XR.Content.Interaction
         Transform m_UpSource;
 
         [SerializeField]
+        [Tooltip("The transform to get as the source of the 'down' direction. Will default to world down if not set.")]
+        Transform m_DownSource;       
+
+        [SerializeField]
         [Tooltip("Event to trigger when tilting goes over the threshold.")]
         UnityEvent m_OnBegin = new UnityEvent();
 
         [SerializeField]
         [Tooltip("Event to trigger when tilting returns from the threshold.")]
         UnityEvent m_OnEnd = new UnityEvent();
+
+        [SerializeField]
+        [Tooltip("Prefab to spawn from the tip while tilted.")]
+        GameObject m_BallPrefab;
+
+        [SerializeField]
+        [Tooltip("The tip from which balls are spawned. Will default to the target transform.")]
+        Transform m_SpawnPoint;
+
+        [SerializeField]
+        [Tooltip("Time in seconds between spawned balls.")]
+        float m_SpawnInterval = 0.1f;
+
+        [SerializeField]
+        [Tooltip("Initial speed applied to spawned balls.")]
+        float m_SpawnVelocity = 1f;
 
         /// <summary>
         /// Event to trigger when tilting goes over the threshold.
@@ -45,10 +65,17 @@ namespace UnityEngine.XR.Content.Interaction
         public UnityEvent onEnd => m_OnEnd;
 
         bool m_WithinThreshold;
+        float m_NextSpawnTime;
 
         void Update()
         {
             CheckOrientation();
+
+            if (m_WithinThreshold && Time.time >= m_NextSpawnTime)
+            {
+                SpawnWaterBall();
+                m_NextSpawnTime = Time.time + Mathf.Max(0.01f, m_SpawnInterval);
+            }
         }
 
         void CheckOrientation()
@@ -80,5 +107,22 @@ namespace UnityEngine.XR.Content.Interaction
                 }
             }
         }
-    }
+
+        public void SpawnWaterBall()
+        {
+            if (m_BallPrefab == null)
+                return;
+
+            var spawnPoint = m_SpawnPoint != null ? m_SpawnPoint : m_Target;
+            var position = spawnPoint != null ? spawnPoint.position : transform.position;
+            var rotation = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
+            var ball = Instantiate(m_BallPrefab, position, rotation);
+
+            if (ball.TryGetComponent<Rigidbody>(out var rigidbody))
+            {
+                var direction = spawnPoint != null ? spawnPoint.forward : -transform.up;
+                rigidbody.linearVelocity = direction.normalized * m_SpawnVelocity;
+            }
+        }
+}
 }

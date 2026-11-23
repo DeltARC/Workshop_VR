@@ -582,6 +582,11 @@ MonoBehaviour:
   m_Threshold: 0.5
   m_Target: {fileID: 6720772605737900939}
   m_UpSource: {fileID: 0}
+  m_DownSource: {fileID: 0}
+  m_BallPrefab: {fileID: 9031775881104408046, guid: 3976a13353f30c74891ad6e9052aaa18, type: 3}
+  m_SpawnPoint: {fileID: 6720772605737900939}
+  m_SpawnInterval: 0.1
+  m_SpawnVelocity: 1
   m_OnBegin:
     m_PersistentCalls:
       m_Calls:
