@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class FlowerPot : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class FlowerPot : MonoBehaviour
     private bool isWater = false;
     private bool isPottingSoils = false;
     public bool isSeed = false;
+
+    [SerializeField] private GameObject WaterBall;
 
     void OnEnable()
     {
@@ -32,4 +37,7 @@ public class FlowerPot : MonoBehaviour
         isSeed = true;
         Debug.Log("Perfect seed");
     }
+
+
+
 }

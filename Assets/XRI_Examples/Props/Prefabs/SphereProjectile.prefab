@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9031775881104408047}
   - component: {fileID: 9031775881104408020}
   - component: {fileID: 9031775881104408019}
+  - component: {fileID: 1322277281478644436}
   m_Layer: 0
   m_Name: SphereProjectile
   m_TagString: Projectile
@@ -154,3 +155,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Lifetime: 2
+--- !u!114 &1322277281478644436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031775881104408046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f586677f49f879146a3af379d69af62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Waterball

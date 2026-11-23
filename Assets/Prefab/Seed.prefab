@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2642312414319847185}
   - component: {fileID: -3251375733839533618}
   - component: {fileID: 3062354100153702845}
-  - component: {fileID: 7440608031007913818}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -297,18 +296,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ed084c47d2e3648b90371c0b1c8fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeedsList
---- !u!114 &7440608031007913818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206745124361155807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6a984f8e447bd4c9db64b28adc7c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingWithPot
-  seedPlacement: {fileID: 5467519887080404252, guid: 9cca4d52c47c74945a2f19adaf5c05f3, type: 3}
-  PlantPrefab:
-  - {fileID: 105402644367234976, guid: cd290402504f6be4287538a1f54cd11b, type: 3}
+  AllSeed: []
