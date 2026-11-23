@@ -27384,6 +27384,7 @@ MonoBehaviour:
   rotationAmount: {x: 0, y: 90, z: 0}
   rotationDuration: 2
   returnDuration: 2
+  audioSource: {fileID: 0}
 --- !u!114 &1452260945 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5283898766228162098, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
