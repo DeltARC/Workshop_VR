@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ActivateGravityCover : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class ActivateGravityCover : MonoBehaviour
         {
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<XRGrabInteractable>().enabled = true;
             Debug.Log("Gravity true / Kinematic false");
 
         }
@@ -24,6 +26,7 @@ public class ActivateGravityCover : MonoBehaviour
         {
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<XRGrabInteractable>().enabled = false;
             Debug.Log("Gravity false / Kinematic true");
 
         }

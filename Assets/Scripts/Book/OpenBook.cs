@@ -8,13 +8,13 @@ public class OpenBook : MonoBehaviour
     [SerializeField] public GameObject CoverBottom;
     [SerializeField] public GameObject CoverBack;
     [SerializeField] public GameObject[] Page;
-    private bool isOpen= false;
+    private bool isOpen = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -27,20 +27,17 @@ public class OpenBook : MonoBehaviour
             isOpen = true;
             Openbook();
         }
-        
+
     }
 
     void Openbook()
     {
-        CoverTop.SetActive(false);
-        CoverBottom.SetActive(false);
-        CoverBack.SetActive(true);
 
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             Page[i].GetComponent<XRGrabInteractable>().enabled = true;
-            Page[i].GetComponent<Rigidbody>().freezeRotation = false;
-            
+
+
             Debug.Log(i);
         }
 
@@ -48,3 +45,4 @@ public class OpenBook : MonoBehaviour
         return;
     }
 }
+
