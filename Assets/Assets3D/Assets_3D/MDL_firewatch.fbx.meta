@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: acbaf2f95561bc747a0ade859de82af7
+guid: e13a28a941675ae43a2a88e9b383cd9a
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_flore
+    second: {fileID: 2100000, guid: ccae667950450634e8028442a1ea7681, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_toit
+    second: {fileID: 2100000, guid: 1cc776a83b7c93949b47a9ab84806f61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_walls
+    second: {fileID: 2100000, guid: 5c122e6d880e7a34abf4b99abc9da99e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
