@@ -6,10 +6,17 @@ public class Dirt : MonoBehaviour
     // Le script est attache a Dirt dans le prefab du pot
 
     public GameObject seedPlacement;
+    public GameObject plantRef;
 
+    [SerializeField] private bool IsItSunny;
     private bool seedPlanted = true;
     public delegate void SeedInDirt();
     public static event SeedInDirt SeedPlanted;
+
+    void Update()
+    {
+        IsItSunnyOrShadowy();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,6 +25,7 @@ public class Dirt : MonoBehaviour
         // SI Seed touche le collider ALORS il se place a l'emplacement de la graine et deviens l'enfant de seedPlacement.
         if (seed)
         {
+            plantRef = seed.transform.parent.gameObject;
             // Permet à la graine de ne plus pouvoir être prise et de suivre le pot en devenant un enfant de seePlacement.
             other.GetComponent<Rigidbody>().isKinematic = true;
             other.GetComponent<XRGrabInteractable>().enabled = false;
@@ -33,5 +41,17 @@ public class Dirt : MonoBehaviour
                 seedPlanted = false;
             }
         }
+    }
+
+    void IsItSunnyOrShadowy()
+    {
+        if (IsItSunny == true)
+        {
+            plantRef.GetComponent<Azelio>().isSunlight = true;
+        }
+        else
+        {
+            plantRef.GetComponent<Azelio>().isShadowed = true;   
+        }    
     }
 }
