@@ -15,6 +15,7 @@ public class ReactingPot : MonoBehaviour
             Debug.Log("Pot rempli de terre !");
             DirtLayer.SetActive(true);
             IsFilledByDirt = true;
+            Destroy(dirtBall.gameObject);
         }
     }
 }
