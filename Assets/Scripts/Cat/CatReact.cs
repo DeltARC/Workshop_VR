@@ -1,25 +1,59 @@
 using UnityEngine;
-using System.Collections;
 
 public class CatReact : MonoBehaviour
 {
-    [SerializeField] private GameObject CatCollisiion;
-    AudioSource AngryCat;
-    
+    public AudioSource angryAudioSource;
+    public AudioSource petAudioSource;
+    public AudioSource purrAudioSource;
 
-    private void Start()
+    public AudioClip[] angrySounds;
+    public AudioClip[] petSounds;
+    public AudioClip[] purrSounds;
+
+    private void PlayRandomSound(AudioSource source, AudioClip[] sounds)
     {
-        AngryCat = GetComponent<AudioSource>();
+        if (sounds.Length == 0) return;
+
+        AudioClip clip = sounds[Random.Range(0, sounds.Length)];
+
+        source.PlayOneShot(clip);
+    }
+
+    public void PlayAngrySound()
+    {
+        PlayRandomSound(angryAudioSource, angrySounds);
+    }
+
+    public void StartPetting()
+    {
+        purrAudioSource.Stop();
+        PlayRandomSound(petAudioSource, petSounds);
+    }
+
+    public void StopPetting()
+    {
+        purrAudioSource.Play();
     }
 
     public void OnTriggerEnter(Collider other)
     {
         Objects objects = other.GetComponent<Objects>();
-
         if (objects)
         {
-            Debug.Log("hit");
-            GetComponent<AudioSource>().Play();
+            PlayAngrySound();
+        }
+        else
+        {
+            StopPetting();
+        }
+        Hands hands = other.GetComponent<Hands>();
+        if (hands)
+        {
+            StartPetting();
+        }
+        else
+        {
+            StopPetting();
         }
     }
 }
