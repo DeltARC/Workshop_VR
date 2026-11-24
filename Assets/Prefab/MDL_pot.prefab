@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 8487608004750292209}
   - component: {fileID: 7285030877837777630}
   - component: {fileID: 8538354500569970348}
+  - component: {fileID: 8497998902286336244}
   m_Layer: 0
   m_Name: ReactingCollider
   m_TagString: Untagged
@@ -212,6 +213,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReactingPot
   DirtLayer: {fileID: 3774838419009324274}
+--- !u!114 &8497998902286336244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754694341673809053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7b22da9a995ad47a23455f02f67538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dirt
+  seedPlacement: {fileID: 7414248123497815636}
 --- !u!1 &7414248123497815636
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,15 +267,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 599381c7e3dc0e345ab7f65991a8fd82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.661
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 599381c7e3dc0e345ab7f65991a8fd82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 599381c7e3dc0e345ab7f65991a8fd82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.6072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 599381c7e3dc0e345ab7f65991a8fd82, type: 3}
       propertyPath: m_LocalRotation.w

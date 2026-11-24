@@ -11,7 +11,7 @@ public class CatReact : MonoBehaviour
         AngryCat = GetComponent<AudioSource>();
     }
 
-    private void OnColliderEnter(Collider other)
+    public void OnColliderEnter(Collider other)
     {
         Objects objects = other.GetComponent<Objects>();
 
