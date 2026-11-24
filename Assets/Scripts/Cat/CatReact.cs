@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CatReact : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class CatReact : MonoBehaviour
         AngryCat = GetComponent<AudioSource>();
     }
 
-    public void OnColliderEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         Objects objects = other.GetComponent<Objects>();
 
