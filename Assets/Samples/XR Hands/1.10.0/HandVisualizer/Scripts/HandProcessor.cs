@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine.XR.Hands.Processing;
+#if UNITY_6000_5_OR_NEWER
+using Unity.Scripting.LifecycleManagement;
+#endif
 
 namespace UnityEngine.XR.Hands.Samples.VisualizerSample
 {
@@ -8,6 +11,9 @@ namespace UnityEngine.XR.Hands.Samples.VisualizerSample
     /// modify the hands skeleton. Note it is possible to modify the bones
     /// directly for more advanced use cases that are not shown here.
     /// </summary>
+#if UNITY_6000_5_OR_NEWER
+    [NoAutoStaticsCleanup]
+#endif
     public class HandProcessor : MonoBehaviour, IXRHandProcessor
     {
         /// <inheritdoc />
@@ -40,6 +46,9 @@ namespace UnityEngine.XR.Hands.Samples.VisualizerSample
         Vector3 m_LastRightHandPosition;
         Pose m_LeftHandPose = Pose.identity;
         Pose m_RightHandPose = Pose.identity;
+
+        XRHandSubsystem m_Subsystem;
+        static readonly List<XRHandSubsystem> s_SubsystemsReuse = new List<XRHandSubsystem>();
 
         [SerializeField]
         [Tooltip("The mode to use for the sample processor.")]
@@ -164,8 +173,5 @@ namespace UnityEngine.XR.Hands.Samples.VisualizerSample
                 m_Subsystem = null;
             }
         }
-
-        XRHandSubsystem m_Subsystem;
-        static List<XRHandSubsystem> s_SubsystemsReuse = new List<XRHandSubsystem>();
     }
 }
