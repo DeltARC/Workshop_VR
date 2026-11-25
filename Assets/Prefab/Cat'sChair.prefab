@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1363440134510760955}
-  - component: {fileID: 71196992970462199}
   - component: {fileID: 9114840654282716919}
+  - component: {fileID: 8011783582363629550}
   m_Layer: 0
   m_Name: CatCollider
   m_TagString: Untagged
@@ -33,8 +33,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8551320742304856516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &71196992970462199
-SphereCollider:
+--- !u!114 &9114840654282716919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812274872571914504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed979e903c92f942863d25ee85b0d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cat
+--- !u!136 &8011783582363629550
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -51,21 +63,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9114840654282716919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5812274872571914504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed979e903c92f942863d25ee85b0d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cat
+  serializedVersion: 2
+  m_Radius: 0.4234964
+  m_Height: 1.0304052
+  m_Direction: 1
+  m_Center: {x: -0.07650354, y: -0.09382366, z: 0}
 --- !u!1 &6496472174708171730
 GameObject:
   m_ObjectHideFlags: 0

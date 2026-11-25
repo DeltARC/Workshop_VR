@@ -5123,7 +5123,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 247ba605683c84a4b8067c3ee0fe1f84, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5235,7 +5235,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ab93bda7f610e254eb0f485f7b805961, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8673,9 +8673,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5044979941106348317, guid: 31aef80729a17af459bb5aeea8c7ffec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2145201759}
-    - targetCorrespondingSourceObject: {fileID: 3972571232263308093, guid: 31aef80729a17af459bb5aeea8c7ffec, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 31aef80729a17af459bb5aeea8c7ffec, type: 3}
 --- !u!1 &2027879949
 GameObject:
