@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Azelio_set
+      name: M_Azelio_set.001
     second: {fileID: 2100000, guid: e98855f6e1b5e804bb5f3716f7970d79, type: 2}
   materials:
     materialImportMode: 2
