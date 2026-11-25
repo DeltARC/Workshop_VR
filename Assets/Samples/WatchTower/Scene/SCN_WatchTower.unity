@@ -8915,59 +8915,19 @@ PrefabInstance:
     - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: petAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3003013156422686380}
     - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: purrAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3003013156422686380}
     - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: angryAudioSource
       value: 
+      objectReference: {fileID: 3003013156422686380}
+    - target: {fileID: 4431390773702170992, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+      propertyPath: minimumMovement
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: petSounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: purrSounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: angrySounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'petSounds.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'petSounds.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'petSounds.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'petSounds.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'petSounds.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'angrySounds.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'angrySounds.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 18dc1cd88cbd8794ba03e9abbcb5bd72, type: 3}
-    - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
-      propertyPath: 'angrySounds.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: e8270ca41890d184e8c91011fc0b3f37, type: 3}
     - target: {fileID: 4734226196039781495, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.305
@@ -9017,6 +8977,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+--- !u!82 &3003013156422686380 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 163218500385850997, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+  m_PrefabInstance: {fileID: 3003013156422686379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3739447628265093664
 PrefabInstance:
   m_ObjectHideFlags: 0

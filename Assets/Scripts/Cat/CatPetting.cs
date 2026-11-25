@@ -20,6 +20,7 @@ public class CatPetting : MonoBehaviour
     [SerializeField] private float pettingCooldown = 0.5f;
 
     private Vector3 previousHandPosition;
+    private bool hasPreviousPosition;
     private bool isPetting;
     private bool isRotating;
     private float lastPettingTime;
@@ -30,23 +31,37 @@ public class CatPetting : MonoBehaviour
             return;
 
         Vector3 currentPosition = other.transform.position;
-        float movement = Vector3.Distance(previousHandPosition, currentPosition);
 
-        previousHandPosition = currentPosition;
-
-        if (isPetting || Time.time < lastPettingTime + pettingCooldown)
+        if (!hasPreviousPosition)
+        {
+            previousHandPosition = currentPosition;
+            hasPreviousPosition = true;
+            Debug.Log("Main détectée sur le chat : " + other.name);
             return;
+        }
+
+        float movement = Vector3.Distance(previousHandPosition, currentPosition);
+        previousHandPosition = currentPosition;
 
         if (movement >= minimumMovement)
         {
-            StartPetting();
+            Debug.Log("Mouvement détecté : " + movement);
+
+            if (!isPetting && Time.time >= lastPettingTime + pettingCooldown)
+            {
+                Debug.Log("CARESSE DÉTECTÉE !");
+                StartPetting();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Hand"))
-            previousHandPosition = other.transform.position;
+        {
+            hasPreviousPosition = false;
+            Debug.Log("Main sortie du collider du chat : " + other.name);
+        }
     }
 
     private void StartPetting()
@@ -54,18 +69,17 @@ public class CatPetting : MonoBehaviour
         isPetting = true;
         lastPettingTime = Time.time;
 
-        // Son principal
         if (audioSource != null && pettingSound != null)
             audioSource.PlayOneShot(pettingSound);
+        else
+            Debug.LogWarning("AudioSource ou Petting Sound manquant !");
 
-        // Son spécial avec une probabilité réglable
         if (audioSource != null && specialSound != null &&
             Random.value <= specialSoundChance)
         {
             audioSource.PlayOneShot(specialSound);
         }
 
-        // Rotation du chat
         if (!isRotating)
             StartCoroutine(RotateCat());
 
@@ -94,10 +108,7 @@ public class CatPetting : MonoBehaviour
             float progress = Mathf.Clamp01(elapsedTime / rotationDuration);
 
             transform.rotation = Quaternion.Slerp(
-                startRotation,
-                targetRotation,
-                progress
-            );
+                startRotation, targetRotation, progress);
 
             yield return null;
         }
