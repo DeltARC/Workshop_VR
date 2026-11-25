@@ -4,8 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class OpenBook : MonoBehaviour
 {
-    [SerializeField] public GameObject CoverTop;
-    [SerializeField] public GameObject CoverBottom;
+
     [SerializeField] public GameObject CoverBack;
     [SerializeField] public GameObject[] Page;
     private bool isOpen = false;
@@ -14,18 +13,24 @@ public class OpenBook : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        Debug.Log("ok");
     }
 
     void Update()
     {
 
-        if (GetComponent<Rigidbody>().useGravity == false && !isOpen)
+        if (CoverBack.GetComponent<Rigidbody>().useGravity == false && !isOpen)
         {
             Debug.Log(isOpen);
-            Debug.Log(GetComponent<Rigidbody>().useGravity);
             isOpen = true;
             Openbook();
+        }
+
+        if (CoverBack.GetComponent<Rigidbody>().useGravity == true && isOpen)
+        {
+            Debug.Log(isOpen);
+            isOpen = false;
+            NotHeldbook();
         }
 
     }
@@ -41,7 +46,21 @@ public class OpenBook : MonoBehaviour
             Debug.Log(i);
         }
 
-        Debug.Log("ouvert");
+        Debug.Log("Pris");
+        return;
+    }
+    void NotHeldbook()
+    {
+
+        for (int i = 0; i < 3; i++)
+        {
+            Page[i].GetComponent<XRGrabInteractable>().enabled = false;
+
+
+            Debug.Log(i);
+        }
+
+        Debug.Log("Non Pris");
         return;
     }
 }
