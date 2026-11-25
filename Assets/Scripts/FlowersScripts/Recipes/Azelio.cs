@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class Azelio : MonoBehaviour
@@ -48,7 +49,7 @@ public class Azelio : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (timer<200)
+        if (timer<20000)
         {
         timer = timer + 1;
         Debug.Log(timer);
@@ -82,6 +83,18 @@ public class Azelio : MonoBehaviour
             isFertilized = true;
             Destroy(fertilizerBall.gameObject);
         }
+        Sun sun = other.GetComponent<Sun>();
+        if (sun)
+        {
+            Debug.Log("Plante au soleil");
+            isSunlight = true;
+        }
+        Shadow shadow = other.GetComponent<Shadow>();
+        if (shadow)
+        {
+            Debug.Log("Plante à l'ombre");
+            isShadowed = true;
+        }        
     }
 
     private void WaterPlant()

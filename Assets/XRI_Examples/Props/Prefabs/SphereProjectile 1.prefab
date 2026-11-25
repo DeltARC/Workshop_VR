@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9031775881104408020}
   - component: {fileID: 9031775881104408019}
   - component: {fileID: -4686560347880683617}
+  - component: {fileID: 7367868444538020675}
   m_Layer: 0
   m_Name: SphereProjectile 1
   m_TagString: Projectile
@@ -167,3 +168,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c050b0bd1af8341887db687064f7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DirtBall
+--- !u!114 &7367868444538020675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031775881104408046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2cb41e571b32b4da055ee98b27eab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Objects
