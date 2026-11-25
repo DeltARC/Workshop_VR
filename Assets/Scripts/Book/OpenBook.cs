@@ -38,7 +38,7 @@ public class OpenBook : MonoBehaviour
     void Openbook()
     {
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
             Page[i].GetComponent<XRGrabInteractable>().enabled = true;
 
@@ -52,7 +52,7 @@ public class OpenBook : MonoBehaviour
     void NotHeldbook()
     {
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
             Page[i].GetComponent<XRGrabInteractable>().enabled = false;
 
