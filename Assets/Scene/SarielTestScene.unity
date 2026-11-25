@@ -370,6 +370,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
   m_PrefabInstance: {fileID: 1553949808}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1277544251 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7329421029714660476, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+  m_PrefabInstance: {fileID: 1428180077294302967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1280152581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,9 +1094,73 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: petAudioSource
+      value: 
+      objectReference: {fileID: 1277544251}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: purrAudioSource
+      value: 
+      objectReference: {fileID: 1277544251}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: angryAudioSource
+      value: 
+      objectReference: {fileID: 1277544251}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: petSounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: purrSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: angrySounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 318cc42b91810ff4ab6a14bf84162a91, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'petSounds.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 328f7689485e8d84f96a524a42532d6c, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'angrySounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
+    - target: {fileID: 2299204443354821726, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: 'angrySounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 18dc1cd88cbd8794ba03e9abbcb5bd72, type: 3}
     - target: {fileID: 6496472174708171730, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
       propertyPath: m_Name
       value: Cat'sChair
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329421029714660476, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
+      propertyPath: m_Resource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8551320742304856516, guid: 6e850526baf8e0d4bbad6ddbaa60b720, type: 3}
       propertyPath: m_LocalPosition.x
