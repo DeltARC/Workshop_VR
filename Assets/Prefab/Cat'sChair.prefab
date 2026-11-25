@@ -113,7 +113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6367198a9ec31c34ea53865bc476ffd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatReact
-  CatCollisiion: {fileID: 5812274872571914504}
+  angryAudioSource: {fileID: 7329421029714660476}
+  petAudioSource: {fileID: 7329421029714660476}
+  purrAudioSource: {fileID: 7329421029714660476}
+  angrySounds:
+  - {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
+  - {fileID: 8300000, guid: 18dc1cd88cbd8794ba03e9abbcb5bd72, type: 3}
+  petSounds:
+  - {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
+  - {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
+  - {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
+  - {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
+  - {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
+  - {fileID: 8300000, guid: 318cc42b91810ff4ab6a14bf84162a91, type: 3}
+  - {fileID: 8300000, guid: 328f7689485e8d84f96a524a42532d6c, type: 3}
+  purrSounds:
+  - {fileID: 0}
 --- !u!82 &7329421029714660476
 AudioSource:
   m_ObjectHideFlags: 0
@@ -125,7 +140,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
