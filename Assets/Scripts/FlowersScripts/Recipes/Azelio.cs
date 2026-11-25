@@ -52,7 +52,6 @@ public class Azelio : MonoBehaviour
         if (timer<20000)
         {
         timer = timer + 1;
-        Debug.Log(timer);
         }
         else
         {
