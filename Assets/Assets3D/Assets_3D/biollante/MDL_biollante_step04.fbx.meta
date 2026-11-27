@@ -3,7 +3,12 @@ guid: 6700262ea77279640a38b6de8f634f7f
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_biollante
+    second: {fileID: 2100000, guid: 8f824aae929779a4a95a5ecb59fa635f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
