@@ -1,11 +1,13 @@
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CatPetting : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private TestCatReact testcatReact;
+    [SerializeField] private CatReact catReact;
+    [SerializeField] private TestCatReact testCatReact;
 
     [Header("Rotation")]
     [SerializeField] private float rotationDuration = 2f;
@@ -15,30 +17,57 @@ public class CatPetting : MonoBehaviour
     [SerializeField] private float minimumMovement = 0.01f;
     [SerializeField] private float pettingCooldown = 0.5f;
 
-    private Vector3 previousHandPosition;
-    private bool hasPreviousPosition;
-    private bool isRotating;
+    private Dictionary<Collider, Vector3> previousPositions = new Dictionary<Collider, Vector3>();
     private float lastPettingTime;
+    private bool isRotating;
+
+    private void Awake()
+    {
+        if (catReact == null)
+            catReact = GetComponentInChildren<CatReact>();
+
+        if (testCatReact == null)
+            testCatReact = GetComponentInChildren<TestCatReact>();
+    }
+
+    private bool IsHandOrController(Collider other)
+    {
+        if (other.GetComponentInParent<Hands>() != null)
+            return true;
+
+        Transform current = other.transform;
+
+        while (current != null)
+        {
+            if (current.CompareTag("Hand"))
+                return true;
+
+            current = current.parent;
+        }
+
+        return false;
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        Hands hands = other.GetComponentInParent<Hands>();
-
-        if (hands == null)
+        if (!IsHandOrController(other))
             return;
 
         Vector3 currentPosition = other.transform.position;
 
-        if (!hasPreviousPosition)
+        if (!previousPositions.ContainsKey(other))
         {
-            previousHandPosition = currentPosition;
-            hasPreviousPosition = true;
-            Debug.Log("Main détectée sur le chat : " + other.name);
+            previousPositions.Add(other, currentPosition);
+            Debug.Log("Main ou manette détectée : " + other.name);
             return;
         }
 
-        float movement = Vector3.Distance(previousHandPosition, currentPosition);
-        previousHandPosition = currentPosition;
+        float movement = Vector3.Distance(
+            previousPositions[other],
+            currentPosition
+        );
+
+        previousPositions[other] = currentPosition;
 
         if (movement >= minimumMovement &&
             Time.time >= lastPettingTime + pettingCooldown)
@@ -47,8 +76,10 @@ public class CatPetting : MonoBehaviour
 
             lastPettingTime = Time.time;
 
-            if (testcatReact != null)
-                testcatReact.StartPetting();
+            if (testCatReact != null)
+                testCatReact.StartPetting();
+            else if (catReact != null)
+                catReact.StartPetting();
 
             if (!isRotating)
                 StartCoroutine(RotateCat());
@@ -57,13 +88,7 @@ public class CatPetting : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Hands hands = other.GetComponentInParent<Hands>();
-
-        if (hands != null)
-        {
-            hasPreviousPosition = false;
-            Debug.Log("Main sortie du chat : " + other.name);
-        }
+        previousPositions.Remove(other);
     }
 
     private IEnumerator RotateCat()
