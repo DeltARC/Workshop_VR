@@ -7,6 +7,10 @@ public class CatFeedback : MonoBehaviour
     public AudioSource petAudioSource;
     public AudioClip[] petSounds;
 
+    [Header("Angry Sounds")]
+    public AudioSource angryAudioSource;
+    public AudioClip[] angrySounds;
+
     [Header("Special Reaction")]
     public AudioSource specialAudioSource;
     public AudioClip specialSound;
@@ -16,11 +20,23 @@ public class CatFeedback : MonoBehaviour
 
     private bool isRotating = false;
 
+    private void PlayRandomSound(AudioSource source, AudioClip[] sounds)
+    {
+        if (source == null || sounds == null || sounds.Length == 0) return;
+
+        AudioClip clip = sounds[Random.Range(0, sounds.Length)];
+        source.PlayOneShot(clip);
+    }
+
+    public void PlayAngrySound()
+    {
+        PlayRandomSound(angryAudioSource, angrySounds);
+    }
+
     public void StartPetting()
     {
         if (petSounds.Length > 0 && petAudioSource != null)
         {
-            Debug.Log("START PETTING APPELE !");
             AudioClip clip = petSounds[Random.Range(0, petSounds.Length)];
             petAudioSource.PlayOneShot(clip);
         }
