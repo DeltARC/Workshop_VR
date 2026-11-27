@@ -2605,6 +2605,7 @@ GameObject:
   - component: {fileID: 1864331085}
   - component: {fileID: 1864331089}
   - component: {fileID: 1864331090}
+  - component: {fileID: 1864331091}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -2717,6 +2718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c95bfe26c7b6b140a635da0225f4254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeedDetect
+  Isplant: 0
 --- !u!64 &1864331090
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2739,6 +2741,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1864331091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864331084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1565a7b67139e1d459eed3e9d870eb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantRecipe
+  Water: {fileID: 11500000, guid: 028a982e0a22ad246b36f3d348c3835b, type: 3}
+  Sun: {fileID: 11500000, guid: e37c2f2e954223e47ab37c01d9a69ac4, type: 3}
+  Shadow: {fileID: 11500000, guid: 9c27288b623d4bb48b8e7726e1267a0a, type: 3}
+  Fertilizer: {fileID: 11500000, guid: b31c77d40f41306489eba931fb76be08, type: 3}
+  NebuctalysCheck: 00000000
+  AzelioCheck: 00000000
+  BiollanteCheck: 0000000000
+  LyseaCheck: 0000000000
+  LillyCheck: 0000000000
+  HeartyCheck: 0000000000
+  YvisCheck: 0000000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
