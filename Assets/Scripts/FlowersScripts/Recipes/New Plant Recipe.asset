@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: New Plant Recipe
   m_EditorClassIdentifier: Assembly-CSharp::PlantRecipe
   plantName: 
-  stages: []
+  stages:
+  - stageName: 
+    steps:
+    - stepType: 0
+      lightRequirement: 0
+      lightDuration: 0
+      waitDuration: 0
