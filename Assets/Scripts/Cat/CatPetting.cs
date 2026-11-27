@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CatPetting : MonoBehaviour
 {
-    private Dictionary<Collider, Vector3> previousPositions = new Dictionary<Collider, Vector3>();
-
+    [Header("Petting Settings")]
     [SerializeField] private CatFeedback catFeedback;
+    [SerializeField] private float movementThreshold = 0.05f;
+    [SerializeField] private float reactionInterval = 0.5f;
+
+    private Dictionary<Collider, Vector3> previousPositions = new Dictionary<Collider, Vector3>();
+    private float nextReactionTime = 0f;
+
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Hand"))
@@ -17,17 +22,16 @@ public class CatPetting : MonoBehaviour
         if (!previousPositions.ContainsKey(other))
         {
             previousPositions.Add(other, currentPosition);
-            Debug.Log("Main détectée : " + other.name);
             return;
         }
 
         float movement = Vector3.Distance(previousPositions[other], currentPosition);
         previousPositions[other] = currentPosition;
 
-        if (movement > 0.01f)
+        if (movement > movementThreshold && Time.time >= nextReactionTime)
         {
-            Debug.Log("Mouvement de caresse détecté : " + other.name);
             catFeedback.StartPetting();
+            nextReactionTime = Time.time + reactionInterval;
         }
     }
 
