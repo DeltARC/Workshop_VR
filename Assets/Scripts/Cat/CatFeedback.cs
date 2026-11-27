@@ -66,4 +66,12 @@ public class CatFeedback : MonoBehaviour
 
         isRotating = false;
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+            return;
+
+        PlayAngrySound();
+    }
 }
