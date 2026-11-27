@@ -6,6 +6,7 @@ public class CatPetting : MonoBehaviour
 {
     private Dictionary<Collider, Vector3> previousPositions = new Dictionary<Collider, Vector3>();
 
+    [SerializeField] private CatFeedback catFeedback;
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Hand"))
@@ -26,6 +27,7 @@ public class CatPetting : MonoBehaviour
         if (movement > 0.01f)
         {
             Debug.Log("Mouvement de caresse détecté : " + other.name);
+            catFeedback.StartPetting();
         }
     }
 

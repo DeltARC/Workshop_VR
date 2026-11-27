@@ -20,6 +20,7 @@ public class CatFeedback : MonoBehaviour
     {
         if (petSounds.Length > 0 && petAudioSource != null)
         {
+            Debug.Log("START PETTING APPELE !");
             AudioClip clip = petSounds[Random.Range(0, petSounds.Length)];
             petAudioSource.PlayOneShot(clip);
         }
