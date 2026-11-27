@@ -1,6 +1,9 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Seed : MonoBehaviour
 {
-    // Attacher au seed, il sers juste a indique que c'est une seed.
+    public enum SeedType { Nebuctalys, Azelio, Biollante , Lysea , Lilly , Hearty , Yvis};
+    public SeedType type;
 }

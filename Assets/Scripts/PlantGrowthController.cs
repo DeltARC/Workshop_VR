@@ -1,5 +1,5 @@
 using UnityEngine;
-
+/*
 public class PlantGrowthController : MonoBehaviour
 {
     [Header("Plant Recipe")]
@@ -12,10 +12,10 @@ public class PlantGrowthController : MonoBehaviour
     {
         get
         {
-            if (recipe == null || currentStageIndex >= recipe.stages.Count)
+           // if (recipe == null || currentStageIndex >= recipe.stages.Count)
                 return null;
 
-            return recipe.stages[currentStageIndex];
+            //return recipe.stages[currentStageIndex];
         }
     }
 
@@ -72,3 +72,4 @@ public class PlantGrowthController : MonoBehaviour
     }
 
 }
+*/
