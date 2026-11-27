@@ -13,7 +13,14 @@ public class ReactingPot : MonoBehaviour
         if (dirtBall)
         {
             Debug.Log("Pot rempli de terre !");
-            DirtLayer.SetActive(true);
+
+            // Show the dirt plane and place it at the full fill height.
+            DirtFillVisual dirtVisual = DirtLayer.GetComponent<DirtFillVisual>();
+            if (dirtVisual != null)
+                dirtVisual.SetFill01(1f);
+            else
+                DirtLayer.SetActive(true);
+
             IsFilledByDirt = true;
             Destroy(dirtBall.gameObject);
         }
