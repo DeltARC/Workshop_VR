@@ -91,9 +91,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3487454623446707183}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 163218500385850997}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
       insertIndex: -1
@@ -103,46 +100,16 @@ PrefabInstance:
       addedObject: {fileID: 4989948159887916377}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4431390773702170992}
+      addedObject: {fileID: 3390964048073636694}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4755580418064250307}
   m_SourcePrefab: {fileID: 100100000, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
 --- !u!1 &1172167297950565345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
   m_PrefabInstance: {fileID: 2055108331460198064}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3487454623446707183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172167297950565345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6367198a9ec31c34ea53865bc476ffd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CatReact
-  angryAudioSource: {fileID: 163218500385850997}
-  petAudioSource: {fileID: 163218500385850997}
-  purrAudioSource: {fileID: 163218500385850997}
-  angrySounds:
-  - {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
-  - {fileID: 8300000, guid: 18dc1cd88cbd8794ba03e9abbcb5bd72, type: 3}
-  - {fileID: 8300000, guid: e8270ca41890d184e8c91011fc0b3f37, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  petSounds:
-  - {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
-  - {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
-  - {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
-  - {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
-  - {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
-  purrSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!82 &163218500385850997
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,7 +242,37 @@ CapsuleCollider:
   m_Height: 0.45987415
   m_Direction: 1
   m_Center: {x: 0.008304564, y: 0.4, z: -0.04138833}
---- !u!114 &4431390773702170992
+--- !u!114 &3390964048073636694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172167297950565345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7947857d80e218b438ebfbe8fe9f6262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestCatReact
+  angryAudioSource: {fileID: 163218500385850997}
+  angrySounds:
+  - {fileID: 8300000, guid: 84e9b81c0939b9b49924f7e880749d14, type: 3}
+  - {fileID: 8300000, guid: 18dc1cd88cbd8794ba03e9abbcb5bd72, type: 3}
+  - {fileID: 8300000, guid: e8270ca41890d184e8c91011fc0b3f37, type: 3}
+  petAudioSource: {fileID: 163218500385850997}
+  petSounds:
+  - {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
+  - {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
+  - {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
+  - {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
+  - {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
+  - {fileID: 8300000, guid: 318cc42b91810ff4ab6a14bf84162a91, type: 3}
+  - {fileID: 8300000, guid: 328f7689485e8d84f96a524a42532d6c, type: 3}
+  - {fileID: 8300000, guid: 9adab76a3a5be8a4f93acbcaf2295cf5, type: 3}
+  specialAudioSource: {fileID: 163218500385850997}
+  specialSound: {fileID: 8300000, guid: 423749b450ba3bc48a78476a462512cb, type: 3}
+  specialSoundChance: 0.4
+--- !u!114 &4755580418064250307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,13 +284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ca23607df115c48be212082f17efb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatPetting
-  audioSource: {fileID: 163218500385850997}
-  pettingSound: {fileID: 0}
-  specialSound: {fileID: 8300000, guid: 423749b450ba3bc48a78476a462512cb, type: 3}
-  specialSoundChance: 0.7
+  testcatReact: {fileID: 3390964048073636694}
   rotationDuration: 2
   rotationCount: 2
-  minimumMovement: 0.05
+  minimumMovement: 0.01
   pettingCooldown: 0.5
 --- !u!4 &1949934801475344731 stripped
 Transform:
