@@ -1016,9 +1016,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: 2
       addedObject: {fileID: 63575188}
+    - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 63575190}
     - targetCorrespondingSourceObject: {fileID: 657184242222895507, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: 2
       addedObject: {fileID: 63575187}
+    - targetCorrespondingSourceObject: {fileID: 657184242222895507, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 63575189}
     - targetCorrespondingSourceObject: {fileID: 6355494128053973299, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 859110084}
@@ -1109,6 +1115,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a67767a7b683040996053904d6c43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hands
+--- !u!135 &63575189
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63575183}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &63575190
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63575184}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &67973207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b515a7c6e556b9498b47f5ce0fab489, type: 3}
@@ -11734,6 +11782,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3390964048073636694, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3487454623446707183, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: petAudioSource
       value: 
@@ -11799,6 +11851,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4755580418064250307, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755580418064250307, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: testCatReact
       value: 
       objectReference: {fileID: 3003013156422686381}
@@ -11809,7 +11865,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1172167297950565345, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3003013156422686383}
   m_SourcePrefab: {fileID: 100100000, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
 --- !u!82 &3003013156422686380 stripped
 AudioSource:
@@ -11821,12 +11880,29 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3390964048073636694, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
   m_PrefabInstance: {fileID: 3003013156422686379}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3003013156422686382}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7947857d80e218b438ebfbe8fe9f6262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestCatReact
+--- !u!1 &3003013156422686382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1172167297950565345, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+  m_PrefabInstance: {fileID: 3003013156422686379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3003013156422686383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003013156422686382}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a374e5a9eb973db47a7729bbdc85c1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Test
 --- !u!1001 &3739447628265093664
 PrefabInstance:
   m_ObjectHideFlags: 0
