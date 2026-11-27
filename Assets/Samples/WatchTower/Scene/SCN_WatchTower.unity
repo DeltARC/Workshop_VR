@@ -11798,6 +11798,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4755580418064250307, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+      propertyPath: testCatReact
+      value: 
+      objectReference: {fileID: 3003013156422686381}
     - target: {fileID: 7407536881704147024, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
       propertyPath: m_Name
       value: Cat_Chair
@@ -11812,6 +11816,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 163218500385850997, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
   m_PrefabInstance: {fileID: 3003013156422686379}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3003013156422686381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3390964048073636694, guid: b6941e4e89643da41a0a782013eff97f, type: 3}
+  m_PrefabInstance: {fileID: 3003013156422686379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7947857d80e218b438ebfbe8fe9f6262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestCatReact
 --- !u!1001 &3739447628265093664
 PrefabInstance:
   m_ObjectHideFlags: 0

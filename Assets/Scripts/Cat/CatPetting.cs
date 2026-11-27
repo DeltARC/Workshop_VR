@@ -6,7 +6,6 @@ using UnityEngine;
 public class CatPetting : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private CatReact catReact;
     [SerializeField] private TestCatReact testCatReact;
 
     [Header("Rotation")]
@@ -23,9 +22,6 @@ public class CatPetting : MonoBehaviour
 
     private void Awake()
     {
-        if (catReact == null)
-            catReact = GetComponentInChildren<CatReact>();
-
         if (testCatReact == null)
             testCatReact = GetComponentInChildren<TestCatReact>();
     }
@@ -78,9 +74,6 @@ public class CatPetting : MonoBehaviour
 
             if (testCatReact != null)
                 testCatReact.StartPetting();
-            else if (catReact != null)
-                catReact.StartPetting();
-
             if (!isRotating)
                 StartCoroutine(RotateCat());
         }
