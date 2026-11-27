@@ -5,11 +5,7 @@ using UnityEngine;
 public class CatPetting : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip pettingSound;
-    [SerializeField] private AudioClip specialSound;
-    [Range(0f, 1f)]
-    [SerializeField] private float specialSoundChance = 0.15f;
+    [SerializeField] private TestCatReact testcatReact;
 
     [Header("Rotation")]
     [SerializeField] private float rotationDuration = 2f;
@@ -21,13 +17,14 @@ public class CatPetting : MonoBehaviour
 
     private Vector3 previousHandPosition;
     private bool hasPreviousPosition;
-    private bool isPetting;
     private bool isRotating;
     private float lastPettingTime;
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("Hand"))
+        Hands hands = other.GetComponentInParent<Hands>();
+
+        if (hands == null)
             return;
 
         Vector3 currentPosition = other.transform.position;
@@ -43,77 +40,54 @@ public class CatPetting : MonoBehaviour
         float movement = Vector3.Distance(previousHandPosition, currentPosition);
         previousHandPosition = currentPosition;
 
-        if (movement >= minimumMovement)
+        if (movement >= minimumMovement &&
+            Time.time >= lastPettingTime + pettingCooldown)
         {
-            Debug.Log("Mouvement détecté : " + movement);
+            Debug.Log("CARESSE DU CHAT !");
 
-            if (!isPetting && Time.time >= lastPettingTime + pettingCooldown)
-            {
-                Debug.Log("CARESSE DÉTECTÉE !");
-                StartPetting();
-            }
+            lastPettingTime = Time.time;
+
+            if (testcatReact != null)
+                testcatReact.StartPetting();
+
+            if (!isRotating)
+                StartCoroutine(RotateCat());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        Hands hands = other.GetComponentInParent<Hands>();
+
+        if (hands != null)
         {
             hasPreviousPosition = false;
-            Debug.Log("Main sortie du collider du chat : " + other.name);
+            Debug.Log("Main sortie du chat : " + other.name);
         }
-    }
-
-    private void StartPetting()
-    {
-        isPetting = true;
-        lastPettingTime = Time.time;
-
-        if (audioSource != null && pettingSound != null)
-            audioSource.PlayOneShot(pettingSound);
-        else
-            Debug.LogWarning("AudioSource ou Petting Sound manquant !");
-
-        if (audioSource != null && specialSound != null &&
-            Random.value <= specialSoundChance)
-        {
-            audioSource.PlayOneShot(specialSound);
-        }
-
-        if (!isRotating)
-            StartCoroutine(RotateCat());
-
-        StartCoroutine(PettingCooldown());
-    }
-
-    private IEnumerator PettingCooldown()
-    {
-        yield return new WaitForSeconds(pettingCooldown);
-        isPetting = false;
     }
 
     private IEnumerator RotateCat()
     {
         isRotating = true;
 
-        Quaternion startRotation = transform.rotation;
-        Quaternion targetRotation = startRotation *
-            Quaternion.Euler(0f, 360f * rotationCount, 0f);
-
         float elapsedTime = 0f;
+        float totalRotation = 360f * rotationCount;
 
         while (elapsedTime < rotationDuration)
         {
-            elapsedTime += Time.deltaTime;
-            float progress = Mathf.Clamp01(elapsedTime / rotationDuration);
+            float delta = Time.deltaTime;
 
-            transform.rotation = Quaternion.Slerp(
-                startRotation, targetRotation, progress);
+            transform.Rotate(
+                0f,
+                totalRotation / rotationDuration * delta,
+                0f,
+                Space.Self
+            );
 
+            elapsedTime += delta;
             yield return null;
         }
 
-        transform.rotation = targetRotation;
         isRotating = false;
     }
 }
