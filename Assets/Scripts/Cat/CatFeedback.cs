@@ -69,9 +69,7 @@ public class CatFeedback : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
-            return;
-
+        if (other.CompareTag("Object"))
         PlayAngrySound();
     }
 }
