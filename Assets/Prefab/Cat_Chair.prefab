@@ -103,10 +103,10 @@ PrefabInstance:
       addedObject: {fileID: 4989948159887916377}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3915452184516226806}
+      addedObject: {fileID: 6709817228743075771}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6709817228743075771}
+      addedObject: {fileID: 90003261297720156}
   m_SourcePrefab: {fileID: 100100000, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
 --- !u!1 &1172167297950565345 stripped
 GameObject:
@@ -272,24 +272,6 @@ CapsuleCollider:
   m_Height: 0.45987415
   m_Direction: 1
   m_Center: {x: 0.008304564, y: 0.4, z: -0.04138833}
---- !u!114 &3915452184516226806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172167297950565345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6367198a9ec31c34ea53865bc476ffd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CatReact
-  angryAudioSource: {fileID: 0}
-  petAudioSource: {fileID: 0}
-  purrAudioSource: {fileID: 0}
-  angrySounds: []
-  petSounds: []
-  purrSounds: []
 --- !u!114 &6709817228743075771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +284,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ca23607df115c48be212082f17efb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatPetting
+--- !u!114 &90003261297720156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172167297950565345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5effc8d7b31cd94e892bb32d6bedeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatFeedback
+  petAudioSource: {fileID: 163218500385850997}
+  petSounds:
+  - {fileID: 8300000, guid: 254b871c6b6b57246935b3e799e9979d, type: 3}
+  - {fileID: 8300000, guid: 8a6da8b245a74fe4eae138d36dc3f399, type: 3}
+  - {fileID: 8300000, guid: f04860ff03e0cf844b8e4189e12cf16a, type: 3}
+  - {fileID: 8300000, guid: 91fc8f32843bab24286ccca7bbb23ac0, type: 3}
+  - {fileID: 8300000, guid: 82e638a58c4995740bf6f915b2fac573, type: 3}
+  - {fileID: 8300000, guid: 318cc42b91810ff4ab6a14bf84162a91, type: 3}
+  - {fileID: 8300000, guid: 328f7689485e8d84f96a524a42532d6c, type: 3}
+  - {fileID: 8300000, guid: 9adab76a3a5be8a4f93acbcaf2295cf5, type: 3}
+  specialAudioSource: {fileID: 163218500385850997}
+  specialSound: {fileID: 8300000, guid: 423749b450ba3bc48a78476a462512cb, type: 3}
+  specialChance: 0.4
+  rotationDuration: 2
 --- !u!4 &1949934801475344731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efedea8f9c258534dbdc1a9b075910a4, type: 3}
