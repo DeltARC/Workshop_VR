@@ -8,7 +8,7 @@ public class PlantStep
     public PlantStepType stepType;
 
     [Header("Light Settings")]
-    public PlantLightRequirement lightRequirement;
+   // public PlantLightRequirement lightRequirement;
     public float lightDuration = 5f;
 
     [Header("Wait Settings")]
@@ -23,13 +23,13 @@ public class PlantStage
     public List<PlantStep> steps = new List<PlantStep>();
 }
 
-[CreateAssetMenu(
-    fileName = "New Plant Recipe",
-    menuName = "Plants/Plant Recipe"
-)]
-public class PlantRecipe : ScriptableObject
-{
-    public string plantName;
+//[CreateAssetMenu(
+  //  fileName = "New Plant Recipe",
+ //   menuName = "Plants/Plant Recipe"
+//)]
+   //     public class PlantRecipe : ScriptableObject
+   //     {
+ //           public string plantName;
 
-    public List<PlantStage> stages = new List<PlantStage>();
-}
+  //          public List<PlantStage> stages = new List<PlantStage>();
+    //    }

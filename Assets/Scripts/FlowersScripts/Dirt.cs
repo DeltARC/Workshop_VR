@@ -16,7 +16,9 @@ public class Dirt : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Seed seed = other.GetComponent<Seed>();
-
+        ReactingPot reactingPot = GetComponentInParent<ReactingPot>();
+        if (reactingPot != null && reactingPot.IsFilledByDirt)
+        {
         // SI Seed touche le collider ALORS il se place a l'emplacement de la graine et deviens l'enfant de seedPlacement.
         if (seed)
         {            // Permet à la graine de ne plus pouvoir être prise et de suivre le pot en devenant un enfant de seePlacement.
@@ -34,5 +36,7 @@ public class Dirt : MonoBehaviour
                 seedPlanted = false;
             }
         }
+        }
     }
+    
 }

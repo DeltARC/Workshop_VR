@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ReactingPot : MonoBehaviour
 {
-    private bool IsFilledByDirt = false;
+    public bool IsFilledByDirt = false;
     private bool HasASeed = false;
 
     [SerializeField] private GameObject DirtLayer;

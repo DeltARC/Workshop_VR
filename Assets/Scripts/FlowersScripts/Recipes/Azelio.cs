@@ -82,18 +82,7 @@ public class Azelio : MonoBehaviour
             isFertilized = true;
             Destroy(fertilizerBall.gameObject);
         }
-        Sun sun = other.GetComponent<Sun>();
-        if (sun)
-        {
-            Debug.Log("Plante au soleil");
-            isSunlight = true;
-        }
-        Shadow shadow = other.GetComponent<Shadow>();
-        if (shadow)
-        {
-            Debug.Log("Plante à l'ombre");
-            isShadowed = true;
-        }        
+        
     }
 
     private void WaterPlant()
