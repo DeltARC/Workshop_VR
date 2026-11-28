@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class SnapPot : MonoBehaviour
 {
     [SerializeField] private Transform potPlacement;
-    [SerializeField] private MeshRenderer placementRenderer;
+    //[SerializeField] private MeshRenderer placementRenderer;
     private FlowerPot currentPot;
     private XRGrabInteractable currentGrab;
 
@@ -33,7 +33,7 @@ public class SnapPot : MonoBehaviour
         isInsideZone = true;
 
         // Masquer le mesh de l'emplacement
-        placementRenderer.enabled = false;
+       // placementRenderer.enabled = false;
 
         currentGrab.selectExited.AddListener(OnPotReleased);
     }
@@ -48,7 +48,7 @@ public class SnapPot : MonoBehaviour
         isInsideZone = false;
 
         // Réafficher le mesh de l'emplacement
-        placementRenderer.enabled = true;
+       // placementRenderer.enabled = true;
 
         currentGrab.selectExited.RemoveListener(OnPotReleased);
 
